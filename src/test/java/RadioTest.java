@@ -52,7 +52,7 @@ public class RadioTest {
     }
 
     @Test
-    public void directIndicationNumber () {
+    public void directIndicationNumber() {
         Radio radNum = new Radio();
 
         radNum.setRadioStationNumber(8);
