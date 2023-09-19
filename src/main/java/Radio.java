@@ -1,28 +1,41 @@
 public class Radio {
-    public int radioStationNumber;
+    private int radioStationNumber;
+    private int soundVolume;
+    private int maxRadioStationNumber = 9;
+    private int minRadioStationNumber = 0;
+    private int maxSoundVolume = 100;
+    private int minSoundVolume = 0;
 
     public int getRadioStationNumber() {
         return radioStationNumber;
     }
 
-    public void maxRadioStationNumber() {
-        radioStationNumber = 9;
-    }
-
-    public void minRadioStationNumber() {
-        radioStationNumber = 0;
+    public int getSoundVolume() {
+        return soundVolume;
     }
 
     public void setRadioStationNumber(int newRadioStationNumber) {
-        if (newRadioStationNumber < 0) {
-            maxRadioStationNumber();
+        if (newRadioStationNumber < minRadioStationNumber) {
+            radioStationNumber = maxRadioStationNumber;
             return;
         }
-        if (newRadioStationNumber > 9) {
-            minRadioStationNumber();
+        if (newRadioStationNumber > maxRadioStationNumber) {
+            radioStationNumber = minRadioStationNumber;
             return;
         }
         radioStationNumber = newRadioStationNumber;
+    }
+
+    public void setNumberSoundVolume(int newSetNumberSoundVolume) {
+        if (newSetNumberSoundVolume > maxSoundVolume) {
+            soundVolume = maxSoundVolume;
+            return;
+        }
+        if (newSetNumberSoundVolume < minSoundVolume) {
+            soundVolume = minSoundVolume;
+            return;
+        }
+        soundVolume = newSetNumberSoundVolume;
     }
 
     public void increaseNumber() {
@@ -33,32 +46,6 @@ public class Radio {
     public void reducingNumber() {
         int number = radioStationNumber - 1;
         setRadioStationNumber(number);
-    }
-
-    public int soundVolume;
-
-    public int getSoundVolume() {
-        return soundVolume;
-    }
-
-    public void maxSoundVolume() {
-        soundVolume = 100;
-    }
-
-    public void minSoundVolume() {
-        soundVolume = 0;
-    }
-
-    public void setNumberSoundVolume(int newSetNumberSoundVolume) {
-        if (newSetNumberSoundVolume > 100) {
-            maxSoundVolume();
-            return;
-        }
-        if (newSetNumberSoundVolume < 0) {
-            minSoundVolume();
-            return;
-        }
-        soundVolume = newSetNumberSoundVolume;
     }
 
     public void increaseSoundVolume() {
