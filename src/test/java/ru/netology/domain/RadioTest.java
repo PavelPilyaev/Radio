@@ -1,7 +1,17 @@
+package ru.netology.domain;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class RadioTest {
+
+    @Test
+    public void radioStation20Test() {
+        RadioStation20 radio = new RadioStation20();
+        radio.setRadioStation20(15);
+
+        Assertions.assertEquals(15, radio.getRadioStation20());
+    }
 
     @Test
     public void maxMinRadioStationNumberTest() {
@@ -21,7 +31,7 @@ public class RadioTest {
 
     @Test
     public void shouldNotSetNumberAboveMax() {
-        Radio number = new Radio();
+        Radio number = new Radio(10);
 
         number.setRadioStationNumber(10);
 
@@ -63,7 +73,7 @@ public class RadioTest {
 
         number.reducingNumber();
 
-        Assertions.assertEquals(9, number.getMaxRadioStationNumber());
+        Assertions.assertEquals(9, number.getRadioStationNumber());
     }
 
     @Test
@@ -123,3 +133,8 @@ public class RadioTest {
     }
 
 }
+
+
+
+
+
