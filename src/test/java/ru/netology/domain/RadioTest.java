@@ -7,7 +7,7 @@ public class RadioTest {
 
     @Test
     public void radioStation20Test() {
-        RadioStation20 radio = new RadioStation20();
+        Radio radio = new Radio();
         radio.setRadioStation20(15);
 
         Assertions.assertEquals(15, radio.getRadioStation20());
