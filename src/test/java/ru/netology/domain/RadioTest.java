@@ -6,14 +6,6 @@ import org.junit.jupiter.api.Test;
 public class RadioTest {
 
     @Test
-    public void radioStation20Test() {
-        Radio radio = new Radio();
-        radio.setRadioStation20(15);
-
-        Assertions.assertEquals(15, radio.getRadioStation20());
-    }
-
-    @Test
     public void maxMinRadioStationNumberTest() {
         Radio number = new Radio();
 
@@ -31,7 +23,7 @@ public class RadioTest {
 
     @Test
     public void shouldNotSetNumberAboveMax() {
-        Radio number = new Radio(10);
+        Radio number = new Radio();
 
         number.setRadioStationNumber(10);
 
@@ -51,9 +43,27 @@ public class RadioTest {
     public void directIndicationNumber() {
         Radio number = new Radio();
 
-        number.setRadioStationNumber(8);
+        number.setCurrentStationNumber(15);
 
-        Assertions.assertEquals(8, number.getRadioStationNumber());
+        Assertions.assertEquals(15, number.getRadioStationNumber());
+    }
+
+    @Test
+    public void directIndicationNumberMin() {
+        Radio number = new Radio();
+
+        number.setCurrentStationNumber(-1);
+
+        Assertions.assertEquals(20, number.getRadioStationNumber());
+    }
+
+    @Test
+    public void directIndicationNumberMax() {
+        Radio number = new Radio();
+
+        number.setCurrentStationNumber(21);
+
+        Assertions.assertEquals(20, number.getRadioStationNumber());
     }
 
     @Test
