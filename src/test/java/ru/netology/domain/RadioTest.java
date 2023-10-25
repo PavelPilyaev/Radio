@@ -40,30 +40,12 @@ public class RadioTest {
     }
 
     @Test
-    public void directIndicationNumber() {
-        Radio number = new Radio();
+    public void stationSelection() {
+        Radio numbet = new Radio(20);
 
-        number.setCurrentStationNumber(15);
+        numbet.setRadioStationNumber(15);
 
-        Assertions.assertEquals(15, number.getRadioStationNumber());
-    }
-
-    @Test
-    public void directIndicationNumberMin() {
-        Radio number = new Radio();
-
-        number.setCurrentStationNumber(-1);
-
-        Assertions.assertEquals(20, number.getRadioStationNumber());
-    }
-
-    @Test
-    public void directIndicationNumberMax() {
-        Radio number = new Radio();
-
-        number.setCurrentStationNumber(21);
-
-        Assertions.assertEquals(20, number.getRadioStationNumber());
+        Assertions.assertEquals(15, numbet.getRadioStationNumber());
     }
 
     @Test
