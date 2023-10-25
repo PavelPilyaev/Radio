@@ -1,13 +1,31 @@
+package ru.netology.domain;
+
 public class Radio {
-    private int radioStationNumber;
     private int soundVolume;
-    private int maxRadioStationNumber = 9;
+    private int radioStationNumber = 10;
+    private int maxRadioStationNumber = radioStationNumber - 1;
     private int minRadioStationNumber = 0;
     private int maxSoundVolume = 100;
     private int minSoundVolume = 0;
 
+    public Radio(int number) {
+        radioStationNumber = number;
+        this.maxRadioStationNumber = number - 1;
+    }
+
+    public Radio() {
+    }
+
     public int getRadioStationNumber() {
         return radioStationNumber;
+    }
+
+    public int getMinRadioStationNumber() {
+        return minRadioStationNumber;
+    }
+
+    public int getMaxRadioStationNumber() {
+        return maxRadioStationNumber;
     }
 
     public int getSoundVolume() {
